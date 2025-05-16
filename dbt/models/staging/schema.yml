@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: staging
+    database: snappy-premise-456414-i7
+    schema: bitcoin_data
+
+    tables:
+      - name: bitcoin_data_all
+    
