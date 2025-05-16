@@ -54,9 +54,8 @@ select
   m.high,
   m.low,
   m.volume,
-  f.year,
-  f.quarter
+  concat(f.year,f.quarter) as YearQuarter
 from first_open f
 join last_close l on f.year = l.year and f.quarter = l.quarter
 join min_max m on f.year = m.year and f.quarter = m.quarter
-order by f.year, f.quarter
+order by YearQuarter

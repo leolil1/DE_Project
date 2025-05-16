@@ -53,9 +53,8 @@ select
   m.high,
   m.low,
   m.volume,
-  f.year,
-  f.month,
+  concat(f.year,f.month) as YearMonth
 from first_open f
 join last_close l on f.year = l.year and f.month = l.month
 join min_max m on f.year = m.year and f.month = m.month
-order by f.year, f.month
+order by YearMonth
